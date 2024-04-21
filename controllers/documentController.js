@@ -1,4 +1,4 @@
-const docService = require('../service/documentService')
+import docService from '../service/documentService.js';
 
 async function createDoc(req, res) {
     console.log("house Controller create Entered salesmager");
@@ -18,4 +18,4 @@ async function createDoc(req, res) {
 }
 
 
-module.exports={createDoc};
+export default {createDoc};

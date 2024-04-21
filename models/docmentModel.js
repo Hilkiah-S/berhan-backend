@@ -1,4 +1,4 @@
-const mongoose=require('mongoose')
+import mongoose from 'mongoose';
 
 const DocumentSchema=new mongoose.Schema({
     documentTitle: { type: String, required: true },  
@@ -12,4 +12,4 @@ const DocumentSchema=new mongoose.Schema({
 
 )
 
-module.exports=mongoose.model('document',DocumentSchema);
+export default mongoose.model('document',DocumentSchema);

@@ -1,14 +1,11 @@
-const router = require("express-promise-router")(); 
-const documentController=require("../controllers/documentController");
+ 
+import documentController from "../controllers/documentController.js";
 
-/** 
- *  
- *  
- * @route 
- * @group  
- * @returns {object} 200 - List confirmation for doc create
- * @returns {Error}  default - Unexpected error 
- */ 
-router.get('/create',  documentController.createDoc); 
+import express from "express";
+const router = express.Router();
 
-module.exports = router;
+
+router.post('/create',  documentController.createDoc);  
+
+
+export default router;

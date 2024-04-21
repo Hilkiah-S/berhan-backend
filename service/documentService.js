@@ -1,4 +1,4 @@
-import DocumentSchema from "../models/documentModel.js";
+import DocumentSchema from "../models/docmentModel.js";
 
 async function createDoc(doctitle,address){
 
@@ -16,4 +16,4 @@ async function createDoc(doctitle,address){
 } 
 
 
-module.exports={createDoc};
+export default {createDoc};
