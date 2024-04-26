@@ -3,7 +3,7 @@ import DocumentSchema from "../models/docmentModel.js";
 async function createDoc(doctitle,address){
 
     const docresponse=DocumentSchema.create({
-        DocumentTitle:doctitle,address
+        documentTitle: doctitle,address
     });
 
     if(!docresponse){
@@ -14,6 +14,11 @@ async function createDoc(doctitle,address){
 
 
 } 
+async function getAllBooks() {
+    const result = await DocumentSchema.find({});
+    console.log("here", result.map(e => e.toJSON()));
+    return result.map(e => e.toJSON())
+}
 
 
-export default {createDoc};
+export default {createDoc,getAllBooks};

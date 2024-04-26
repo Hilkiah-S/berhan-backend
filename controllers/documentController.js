@@ -17,5 +17,18 @@ async function createDoc(req, res) {
         }
 }
 
+async function getAllBooks(req, res) {
+    try {
 
-export default {createDoc};
+        const result = await docService.getAllCustomers();
+        if (!result)
+            return res.json({ "success": false, "msg": "Can't fetch books" }, 401)
+        return res.json({ "success": true, "data": result })
+    } catch (e) {
+        return res.json({ "success": false, "msg": e.toString() }, 500)
+    }
+
+}
+
+
+export default {createDoc,getAllBooks};
